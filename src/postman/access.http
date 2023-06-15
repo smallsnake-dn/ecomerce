@@ -1,0 +1,24 @@
+@url_dev = http://localhost:3000/v1/api/
+
+
+###
+POST {{url_dev}}/shop/signup
+Content-Type: application/json
+x_api_key : abc
+
+{
+   "name" : "Ta Tien",
+   "email" : "tien11@gmail",
+   "password" : "abc123"
+}
+
+
+###
+POST http://localhost:3000/v1/api/shop/login
+Content-Type: application/json
+x_api_key : abc
+
+{
+   "email" : "tien11@gmail",
+   "password" : "abc123"
+}

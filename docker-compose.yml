@@ -1,0 +1,14 @@
+version: '1.0'
+
+services:
+  app:
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      - DEV_DB_HOST=mongo
+      - DEV_DB_PORT=27017
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
