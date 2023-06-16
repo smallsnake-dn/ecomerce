@@ -26,6 +26,7 @@ class AccessService {
 
         // find email, if email is not registed throw a errỏ
         const shop = await findByEmail(email);
+        console.log({shop})
         if (!shop) throw new BadRequest("Email is not registed!!!");
 
 
