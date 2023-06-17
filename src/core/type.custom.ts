@@ -35,3 +35,11 @@ export interface Params {
     privateKey: string;
     refreshToken: string;
 }
+
+export interface ProductAttribute {
+    name : String | undefined;
+    description : String | undefined;
+    image : String | undefined;
+    price : String | undefined;
+}
+

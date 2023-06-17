@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { routerAccess } from "./access";
+import { routerProduct } from "./product";
 
 import {apiKey, checkPermission} from "../auth/checkAuth"
 
@@ -16,4 +17,5 @@ export const router = Router();
 
 
 
+router.use("/v1/api", routerProduct)
 router.use("/v1/api", routerAccess)
