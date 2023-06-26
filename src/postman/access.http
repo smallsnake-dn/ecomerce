@@ -22,3 +22,26 @@ x_api_key : abc
    "email" : "tien11@gmail",
    "password" : "abc123"
 }
+
+
+
+###
+POST http://localhost:3000/v1/api/product
+Content-Type: application/json
+
+{
+   "type" : "electric",
+   "name" : "do dien tu",
+   "description" : "loai dac biet",
+   "image" : "link to image",
+   "price" : "12000"
+}
+
+###
+PATCH  http://localhost:3000/v1/api/product/648d34db91a7cbe959253f6d
+Content-Type: application/json
+
+{
+   "type" : "electric",
+   "name" : "do dien tu update"
+}

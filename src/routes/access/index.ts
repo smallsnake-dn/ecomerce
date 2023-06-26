@@ -9,6 +9,7 @@ export const routerAccess = Router();
 // router for signUp new 
 routerAccess.post("/shop/signup", asyncHandler(accessController.signUp))
 routerAccess.post("/shop/login", asyncHandler(accessController.login))
+routerAccess.post("/auth/google", asyncHandler(accessController.loginWithGoogle))
 
 
 routerAccess.use(authentication)

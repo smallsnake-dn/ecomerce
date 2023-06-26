@@ -16,8 +16,8 @@ class ProductController {
         new OK({
             message : "update product success!",
             statusCode : 204,
-            metadata : ProductService.updateProduct(id, req.body)
-        })
+            metadata : await ProductService.updateProduct(id, req.body)
+        }).send(res);
     }
 }
 

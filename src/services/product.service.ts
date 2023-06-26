@@ -11,10 +11,10 @@ export class ProductService {
     }) {
         const type: string = body.type;
         if(!type)
-            return new BadRequest();
+            throw new BadRequest();
         const product = await ProductFactory.createProduct(type, body);
         if(!product) 
-            return new InternalServerError();
+            throw new InternalServerError();
         return product;
     }
 
@@ -27,12 +27,12 @@ export class ProductService {
     }) {
         const type: string = body.type;
         if(!type)
-            return new BadRequest();
+            throw new BadRequest("missing type");
         if(!id)
-            return new BadRequest();
+            throw new BadRequest("missing id product");
         const product = await ProductFactory.updateProduct(type, id, body);
         if(!product) 
-            return new InternalServerError();
+            throw new InternalServerError();
         return product;
     }
 }

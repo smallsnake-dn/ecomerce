@@ -32,6 +32,19 @@ class AccessController {
         }).send(res);
         // return res.status(200).json(await AccessService.signUp(body));
     };
+
+
+    loginWithGoogle = async (req: Request, res: Response, next: NextFunction) => {
+        const body: {
+            clientId : string,
+            authorization : string
+        } = req.body;
+        new CREATED({
+            message: "Registed OK Class",
+            metadata: await AccessService.loginWithGoogle(body),
+        }).send(res);
+        // return res.status(200).json(await AccessService.signUp(body));
+    };
 }
 
 export default new AccessController();

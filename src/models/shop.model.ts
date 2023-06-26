@@ -17,13 +17,20 @@ const shopSchema = new Schema({
         trim : true
     },
     password : {
-        type : String,
-        required : true
+        type : String
     },
     status : {
         type : String,
         enum : ["active", "inactive"],
         default : "inactive"
+    },
+    auth : {
+        type : String,
+        enum : ["local", "google", "facebook"],
+        default : "local"
+    },
+    auth_id : {
+        type : String
     },
     verify : {
         type : Schema.Types.Boolean,
