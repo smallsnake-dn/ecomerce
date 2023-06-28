@@ -10,10 +10,9 @@ import { Roles } from "../core/constant";
 import { CONTROLLERBODY } from "../core/type.custom";
 import { OAuth2Client } from "google-auth-library";
 
-const CLIENT_ID =
-    "160188344909-3l68rl0arv14kr6fnu8gvdf3puk77ia9.apps.googleusercontent.com";
-const CLIENT_SECRET = "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";
-const REDIRECT_URI = "http://localhost:3000/auth/google/callback";
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
+const REDIRECT_URI =process.env.REDIRECT_URI;
 
 const oAuth2Client = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
 
