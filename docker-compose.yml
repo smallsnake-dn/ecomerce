@@ -3,12 +3,29 @@ version: '1.0'
 services:
   app:
     build: .
-    ports:
-      - 3000:3000
+    # ports:
+    #   - 3000:3000
     environment:
       - DEV_DB_HOST=mongo
       - DEV_DB_PORT=27017
+    networks:
+      - ecomerce1
     depends_on:
       - mongo
   mongo:
     image: mongo
+    networks:
+      - ecomerce1
+  nginx:
+    build: ./nginx
+    # volumes:
+    #   - ./nginx:/etc/nginx/conf.d
+    ports:
+    - 8080:3000
+    networks:
+      - ecomerce1
+    depends_on:
+    - app
+    
+networks:
+  ecomerce1:
